@@ -64,14 +64,14 @@ Bạn có thể thiết lập biến môi trường trực tiếp từ terminal 
 
 * **Windows (PowerShell):**
   ```powershell
-  $env:OPENAI_API_KEY="sk-proj-your-openai-key-here"
-  $env:GEMINI_API_KEY="AIzaSy-your-gemini-key-here"
+  $env:OPENAI_API_KEY="your-openai-key-here"
+  $env:GEMINI_API_KEY="your-gemini-key-here"
   ```
 
 * **Windows (CMD):**
   ```cmd
-  set OPENAI_API_KEY=sk-proj-your-openai-key-here
-  set GEMINI_API_KEY=AIzaSy-your-gemini-key-here
+  set OPENAI_API_KEY=your-openai-key-here
+  set GEMINI_API_KEY=your-gemini-key-here
   ```
 
 * **macOS/Linux (Terminal):**
