@@ -26,10 +26,10 @@ Bạn sẽ thấy output so sánh phản hồi của GPT-4o và GPT-4o-mini.
 Gọi `call_openai` với các giá trị temperature 0.0, 0.5, 1.0 và 1.5 sử dụng prompt **"Hãy kể cho tôi một sự thật thú vị về Việt Nam."**
 
 **Bạn nhận thấy quy luật gì qua bốn phản hồi?** (2–3 câu)
-> *Câu trả lời của bạn*
+> Các phản hồi thay đổi từ rất chặt chẽ và có tính xác thực cao ở temperature thấp sang sáng tạo và đa dạng hơn ở temperature cao. Ở `0.0` câu trả lời thường ngắn gọn, chuẩn xác và lặp lại; ở `0.5` có thêm chút biến thể; ở `1.0` nội dung sáng tạo, ngôn ngữ đa dạng hơn; ở `1.5` câu trả lời có thể dài, nhiều chi tiết tưởng tượng và đôi khi kém chính xác hơn.
 
 **Bạn sẽ đặt temperature bao nhiêu cho chatbot hỗ trợ khách hàng, và tại sao?**
-> *Câu trả lời của bạn*
+> Em sẽ đặt temperature khoảng `0.0–0.3` (ví dụ `0.2`) để đảm bảo tính nhất quán và chính xác, giảm rủi ro thông tin sai lệch trong môi trường hỗ trợ khách hàng.
 
 ---
 
@@ -37,16 +37,17 @@ Gọi `call_openai` với các giá trị temperature 0.0, 0.5, 1.0 và 1.5 sử
 Xem xét kịch bản: 10.000 người dùng hoạt động mỗi ngày, mỗi người thực hiện 3 lần gọi API, mỗi lần trung bình ~350 token.
 
 **Ước tính xem GPT-4o đắt hơn GPT-4o-mini bao nhiêu lần cho workload này:**
-> *Câu trả lời của bạn*
+> Giả sử 350 token chia đều thành ~175 token input và 175 token output mỗi cuộc gọi. Dựa trên bảng giá mẫu, chi phí trung bình mỗi cuộc gọi ~ $0.004375 cho GPT-4o và ~ $0.00013125 cho GPT-4o-mini. Với 30.000 cuộc gọi/ngày, GPT-4o ~ $131.25/ngày so với GPT-4o-mini ~ $3.94/ngày — tức GPT-4o đắt hơn khoảng **33 lần**.
 
 **Mô tả một trường hợp mà chi phí cao hơn của GPT-4o là xứng đáng, và một trường hợp GPT-4o-mini là lựa chọn tốt hơn:**
-> *Câu trả lời của bạn*
+> Xứng đáng: Ứng dụng y tế/luật hoặc hệ thống phân tích phức tạp cần độ chính xác và khả năng suy luận cao — chất lượng mô hình mạnh hơn có thể quyết định kết quả đúng/sai và mang lại giá trị lớn.  
+> Chọn mini: Ứng dụng hỗ trợ khách hàng quy mô lớn (FAQ, phân loại, tóm tắt ngắn) nơi throughput và chi phí thấp quan trọng hơn, và chất lượng ngôn ngữ tiêu chuẩn là đủ.
 
 ---
 
 ### Bài tập 2.3 — Trải Nghiệm Người Dùng với Streaming
 **Streaming quan trọng nhất trong trường hợp nào, và khi nào thì non-streaming lại phù hợp hơn?** (1 đoạn văn)
-> *Câu trả lời của bạn*
+> Streaming quan trọng nhất khi người dùng mong đợi phản hồi theo thời gian thực — ví dụ trợ lý giọng nói, trình soạn thảo giúp gợi ý khi gõ, hoặc chat tương tác dài nơi từng phần trả về cải thiện trải nghiệm và giảm độ trễ cảm nhận. Non-streaming phù hợp cho các tác vụ ngắn gọn hoặc batch (tổng hợp báo cáo, tóm tắt) nơi cần kết quả đầy đủ, nhất quán, hoặc khi hạ tầng/chi phí/độ phức tạp triển khai không cho phép streaming.
 
 
 ## Danh Sách Kiểm Tra Nộp Bài
